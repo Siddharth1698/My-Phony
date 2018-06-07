@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 public class Adapter extends ArrayAdapter<String> {
     String[] num = {};
-    int[] img ={};
+    int img;
     Context c;
     LayoutInflater inflater;
-    public Adapter(@NonNull Context context, String[] num, int[] img) {
+    public Adapter(@NonNull Context context, String[] num, int img) {
         super(context, R.layout.model,num);
         this.c = context;
         this.num = num;
@@ -38,7 +38,7 @@ public class Adapter extends ArrayAdapter<String> {
         holder.numtv = (TextView)convertView.findViewById(R.id.textView3);
         holder.imgi = (ImageView)convertView.findViewById(R.id.imageView2);
 
-        holder.imgi.setImageResource(img[position]);
+        holder.imgi.setImageResource(img);
         holder.numtv.setText(num[position]);
 
         return convertView;
