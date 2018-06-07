@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView iv,v;
     ListView listView;
     String[] num = {"9496408159","8015648498"};
-    int img =R.drawable.baseline_phone_black_18dp;
+    int[] img ={R.drawable.family_son,R.drawable.family_daughter};
+    String[] name = {"Sidd","Sumi"};
     TextView t;
 
     @SuppressLint("WrongViewCast")
@@ -53,14 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         listView = (ListView)findViewById(R.id.listView);
-        Adapter arrayAdapter = new Adapter(this,num,img);
+        Adapter arrayAdapter = new Adapter(this,num,name,img);
         listView.setAdapter(arrayAdapter);
         t = (TextView)findViewById(R.id.textView4);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                ed.setText(position);
+
+                        Toast.makeText(getApplicationContext(),name[position],Toast.LENGTH_SHORT).show();
+
             }
         });
 

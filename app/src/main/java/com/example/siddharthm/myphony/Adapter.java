@@ -11,19 +11,22 @@ import android.widget.TextView;
 
 public class Adapter extends ArrayAdapter<String> {
     String[] num = {};
-    int img;
+    String[] name = {};
+    int[] img = {};
     Context c;
     LayoutInflater inflater;
-    public Adapter(@NonNull Context context, String[] num, int img) {
+    public Adapter(@NonNull Context context, String[] num,String[] name, int[] img) {
         super(context, R.layout.model,num);
         this.c = context;
         this.num = num;
         this.img = img;
+        this.name = name;
 
     }
 
     public class ViewHolder{
         TextView numtv;
+        TextView nametv;
         ImageView imgi;
     }
 
@@ -37,9 +40,11 @@ public class Adapter extends ArrayAdapter<String> {
         final ViewHolder holder = new ViewHolder();
         holder.numtv = (TextView)convertView.findViewById(R.id.textView3);
         holder.imgi = (ImageView)convertView.findViewById(R.id.imageView2);
+        holder.nametv = (TextView)convertView.findViewById(R.id.textView9);
 
-        holder.imgi.setImageResource(img);
+        holder.imgi.setImageResource(img[position]);
         holder.numtv.setText(num[position]);
+        holder.nametv.setText(name[position]);
 
         return convertView;
     }
