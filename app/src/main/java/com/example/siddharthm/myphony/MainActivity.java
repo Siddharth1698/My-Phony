@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText ed;
     ImageView iv,v;
     ListView listView;
-    String[] num = {"9496408159","8015648498"};
+    String[] num = {"7894563218","9587965544"};
     int[] img ={R.drawable.family_son,R.drawable.family_daughter};
     String[] name = {"Sidd","Sumi"};
     TextView t;
