@@ -15,7 +15,6 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
     EditText ed;
     ImageView iv;
-    Button b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ed = (EditText) findViewById(R.id.editText);
         iv = (ImageView) findViewById(R.id.imageView);
-        b = (Button)findViewById(R.id.button);
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
