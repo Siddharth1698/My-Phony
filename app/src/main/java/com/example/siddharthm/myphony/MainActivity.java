@@ -1,6 +1,7 @@
 package com.example.siddharthm.myphony;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -8,13 +9,17 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     EditText ed;
     ImageView iv;
+    ListView listView;
+    String[] num = {"abc","def"};
+    int[] img = {R.drawable.baseline_phone_black_18dp,R.drawable.baseline_phone_black_18dp};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        listView = (ListView)findViewById(R.id.listView);
+        Adapter arrayAdapter = new Adapter(this,num,img);
+        listView.setAdapter(arrayAdapter);
+
 
     }
 }

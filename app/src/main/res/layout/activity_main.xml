@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#972384"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,6 +13,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="10dp"
+        android:background="#6f2494"
         android:orientation="horizontal">
 
         <EditText
@@ -22,7 +24,8 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColor="@android:color/background_light" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -34,6 +37,15 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="377dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6f2494"
+        android:text="ADD MORE Favorite"
+        android:textColor="@android:color/background_light" />
 </LinearLayout>
